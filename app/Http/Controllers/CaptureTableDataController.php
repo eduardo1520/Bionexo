@@ -63,9 +63,7 @@ class CaptureTableDataController extends Controller
         }
 
         $table = array_filter($table);
-
         $repository->save($table);
-
         $students = $repository->findAll();
 
         return response()->json($students);
@@ -95,6 +93,5 @@ class CaptureTableDataController extends Controller
 
         echo $dom->saveHTML();
     }
-
 
 }
