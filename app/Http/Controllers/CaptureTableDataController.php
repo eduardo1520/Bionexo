@@ -37,9 +37,7 @@ class CaptureTableDataController extends Controller
         $rows = $tables->item(0)->getElementsByTagName('tr');
         $cols = $rows->item(0)->getElementsByTagName('th');
         $row_headers = NULL;
-
-        $row_headers = NULL;
-
+        
         foreach ($cols as $node) {
             $row_headers[] = $node->nodeValue;
         }
@@ -65,9 +63,7 @@ class CaptureTableDataController extends Controller
         }
 
         $table = array_filter($table);
-
         $repository->save($table);
-
         $students = $repository->findAll();
 
         return response()->json($students);
@@ -97,6 +93,5 @@ class CaptureTableDataController extends Controller
 
         echo $dom->saveHTML();
     }
-
 
 }
